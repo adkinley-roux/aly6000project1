@@ -14,3 +14,12 @@ mtcars |> group_by(model) |>
   ggplot(mapping = aes(x = model, y = avg_mpg)) +
   geom_col(fill = "red")
 
+mtcars |> group_by(model) |> 
+  summarize(avg_mpg = mean(mpg)) |> 
+  arrange(desc(avg_mpg)) |> 
+  slice(1:10) |> 
+  ggplot(mapping = aes(y = model, x = avg_mpg)) +
+  geom_col(fill = "red", orientation = "y")
+
+
+
