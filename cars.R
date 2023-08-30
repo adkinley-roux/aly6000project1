@@ -22,4 +22,5 @@ mtcars |> group_by(model) |>
   geom_col(fill = "red", orientation = "y")
 
 
-
+mtcars |> ggplot(mapping = aes(x = wt, y = mpg, color = cyl)) +
+  geom_point()
